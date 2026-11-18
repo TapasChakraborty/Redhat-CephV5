@@ -1,0 +1,23 @@
+[student@workstation ~]$ lab start Tab Tab
+    api-review             cluster-admin          comprehensive-review1
+    api-s3                 cluster-maint          comprehensive-review2
+    api-swift              cluster-review         comprehensive-review3
+    block-devices          component-auth         comprehensive-review4
+    block-import           component-osd          comprehensive-review5
+    block-review           component-pool         configure-monitor
+    block-snapshot         component-review       configure-networ
+
+Ceph Storage Back-end Components
+====================================
+The Red Hat Ceph Storage cluster has the following daemons:
+• Monitors (MONs) maintain maps of the cluster state. They help the other daemons to
+coordinate with each other.
+• Object Storage Devices (OSDs) store data and handle data replication, recovery, and
+rebalancing.
+• Managers (MGRs) track runtime metrics and expose cluster information through a browser
+based dashboard and REST API.
+• Metadata Servers (MDSes) store metadata that CephFS uses (but not object storage or block
+storage) so that clients can run POSIX commands efficiently.
+These daemons can scale to meet the requirements of a deployed storage cluster.
+
+[root@node ~]# cephadm bootstrap --mon-ip=MON_IP \--registry-url=registry.redhat.io \--regist ry-username=REGISTRY_USERNAME --registry-password=REGISTRY_PASSWORD \--initial-dashboard-password=DASHBOARD_PASSWORD --dashboard-password-noupdate \--allow-fqdn-hostname
